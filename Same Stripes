@@ -1,0 +1,21 @@
+def is_same_stripes(matrix):
+    same_diagonal_elements = {} 
+    # create a dictionay to store lists of elements 
+    # that belong to the same diagonal in the matrix.
+  
+    for i in range(len(matrix)): #loop through rows, i in row index
+        for j in range(len(matrix[i])):  #loop through columns, j in column index
+            if i - j not in same_diagonal_elements:
+                same_diagonal_elements[i - j] = []
+            same_diagonal_elements[i - j].append(matrix[i][j])
+            # Create a new entry with an empty list.
+    
+    for key in same_diagonal_elements:
+        # Check if all elements in the diagonal are the same
+        # set ko duplicate nên là số trùng sẽ tính là 1
+        # ví dụ [42, 7, 42] thì sẽ trả về là {42, 7} là len = 2
+        if len(set(same_diagonal_elements[key])) != 1:
+            return False
+    
+    print(same_diagonal_elements[key])
+    return True
