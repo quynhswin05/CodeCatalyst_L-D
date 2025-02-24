@@ -1,0 +1,10 @@
+def intersection(a, b):
+  result = []
+  
+  for i in a:
+    for j in b:
+      
+      if i == j and i not in result:
+        result.append(i)
+        
+  return result 
