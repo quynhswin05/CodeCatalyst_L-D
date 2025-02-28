@@ -1,0 +1,13 @@
+def weakest_strong_link(strength):
+    m = len(strength)
+    n = len(strength[0])
+
+    min_rows = [min(row) for row in strength]  
+    max_cols = [max(col) for col in zip(*strength)]  
+    
+    for i in range(m):
+        for j in range(n):
+            if strength[i][j] == min_rows[i] and strength[i][j] == max_cols[j]:
+                return strength[i][j]
+
+    return -1
