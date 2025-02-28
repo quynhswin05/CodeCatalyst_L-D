@@ -1,0 +1,2 @@
+def contains_duplicate(input)-> bool:
+  return list(set(input)) != input
